@@ -8,6 +8,7 @@ class ItemList extends Component {
                 <h3 className="text-capitalize text-center">
                     todo list
                 </h3>
+                <Item />
                 <button type="button" className="btn btn-danger btn-block text-capitalize mt-5">
                     clear list
                 </button>
