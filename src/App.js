@@ -36,6 +36,13 @@ class App extends Component{
         });
     };
 
+/*    handleDelete = id => {
+        const filteredItems = this.state.items.filter(item => item.id !== id);
+        this.setState({
+            items: filteredItems
+        });
+    };
+*/
   render() {
     return (
         <div className="container">
@@ -46,7 +53,7 @@ class App extends Component{
                   item={this.state.item}
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit} />
-              <ItemList items={this.state.items} />
+              <ItemList items={this.state.items} /*handleDelete={this.handleDelete()}*/ />
             </div>
           </div>
         </div>
