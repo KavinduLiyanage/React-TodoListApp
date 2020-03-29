@@ -2,25 +2,24 @@ import React, {Component} from 'react';
 import Item from "./Item";
 
 class ItemList extends Component {
+
     render() {
-        const {items, handleDelete} = this.props
         return (
-            <ul className="list-group my-5">
+            <ul className="list-group my-3">
                 <h3 className="text-capitalize text-center">
                     todo list
                 </h3>
-
                 {
-                    items.map(item => {
+                    this.props.body.map((value, index) => {
                         return(
-                            <Item key={item.id} title={item.title} /*handleDelete={() => handleDelete(item.id)}*/ />
+                            <Item key={index} title={value.fName} number={value.no} complete={value.complete}
+                                  editItem={this.props.editItem}
+                                  deleteItem={this.props.deleteItem}
+                                  markComplete={this.props.markComplete}
+                            />
                         )
                     })
                 }
-
-                <button type="button" className="btn btn-danger btn-block text-capitalize mt-5" >
-                    clear list
-                </button>
             </ul>
         );
     }
